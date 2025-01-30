@@ -8,7 +8,9 @@ export default [
     { languageOptions: { globals: globals.browser } },
     pluginReact.configs.flat.recommended,
     {
-        plugins: ["import"], // eslint-plugin-import 플러그인 활성화
+        plugins: {
+            import: pluginImport, // 'import' 플러그인 객체 형식으로 수정
+        },
         rules: {
             "import/prefer-default-export": "off", // 'import/prefer-default-export' 규칙 비활성화
         },
