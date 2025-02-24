@@ -1,6 +1,20 @@
-import * as React from 'react';
-import Dashboard from './dashboard/Dashboard'; // 대시보드 컴포넌트 임포트
+import CssBaseline from "@mui/material/CssBaseline";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
+import React from "react";
+import { RouterProvider } from "react-router-dom";
+import ScrollTop from "./components/ScrollTop";
+import router from "./routes";
+import theme from "./theme";
 
-export default function App() {
-    return <Dashboard / > ; // 대시보드 컴포넌트 렌더링
-}
+const App = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <ScrollTop>
+        <RouterProvider router={router} />
+      </ScrollTop>
+    </ThemeProvider>
+  );
+};
+
+export default App;
